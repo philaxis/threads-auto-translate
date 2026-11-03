@@ -3,8 +3,8 @@
     "threads-auto-translate@philaxis": {
       "updates": [
         {
-          "version": "1.1.1",
-          "update_link": "https://github.com/philaxis/threads-auto-translate/releases/download/v1.1.1/threads-auto-translate.xpi"
+          "version": "1.1.2",
+          "update_link": "https://github.com/philaxis/threads-auto-translate/releases/download/v1.1.2/threads-auto-translate.xpi"
         }
       ]
     }
