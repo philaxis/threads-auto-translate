@@ -4,6 +4,8 @@
 
 [English](README.md) · [한국어](README.ko.md) · 繁體中文
 
+<img src="docs/demo.gif" width="400" alt="示範">
+
 這是一個小型 Firefox 擴充套件，會替你在 Threads（threads.com）的外語貼文下方按下 **翻譯** 按鈕。
 翻譯本身是 Threads 原有的功能，這個擴充套件只負責按按鈕。
 

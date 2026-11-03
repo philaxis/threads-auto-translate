@@ -4,6 +4,8 @@
 
 English · [한국어](README.ko.md) · [繁體中文](README.zh-TW.md)
 
+<img src="docs/demo.gif" width="400" alt="Demo">
+
 A small Firefox extension that clicks the **Translate** button under foreign-language posts on Threads (threads.com) for you.
 Translation is Threads' own built-in feature; this extension only clicks the button.
 

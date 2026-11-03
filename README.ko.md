@@ -4,6 +4,8 @@
 
 [English](README.md) · 한국어 · [繁體中文](README.zh-TW.md)
 
+<img src="docs/demo.gif" width="400" alt="데모">
+
 스레드(threads.com)에서 외국어 글 아래에 있는 **번역하기** 버튼을 대신 눌러 주는 작은 Firefox 확장입니다.
 번역은 스레드에 원래 있는 번역 기능 그대로이고, 이 확장은 버튼만 눌러 줍니다.
 
