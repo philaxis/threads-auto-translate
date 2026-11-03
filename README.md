@@ -1,35 +1,43 @@
-# Threads 자동 번역
+# 스레드 자동 번역 (비공식)
 
-스레드(threads.com / threads.net) 피드에서 외국어 게시물의 **번역하기** 버튼을 자동으로 눌러 주는 아주 작은 Firefox 확장입니다.
-번역 자체는 Threads(Meta)가 하며, 이 확장은 버튼만 대신 클릭합니다.
+스레드(threads.com)에서 외국어 글 아래에 있는 **번역하기** 버튼을 대신 눌러 주는 작은 Firefox 확장입니다.
+번역은 스레드에 원래 있는 번역 기능 그대로이고, 이 확장은 버튼만 눌러 줍니다.
 
-## 동작
+## 설치
 
-- 화면 근처(위아래 800px)에 들어온 게시물의 번역 버튼만 순서대로 클릭합니다.
-- 한 번 처리한 게시물은 다시 건드리지 않습니다. **원본 보기**로 되돌려도 다시 번역되지 않습니다.
-- 클래스 이름 같은 내부 값은 쓰지 않고, 버튼의 글자(`번역하기`, `번역 보기`, `Translate`, `See translation`)로만 찾습니다.
-
-## 켜기 / 끄기
-
-툴바의 아이콘을 누르면 켜짐/꺼짐이 바뀝니다. 꺼져 있으면 배지에 `OFF`가 표시됩니다.
-설정은 브라우저에 저장되어 다음에 열어도 유지됩니다.
-
-## 설치 (Windows · Mac · Linux 공통)
-
-1. Firefox에서 아래 링크를 누릅니다. (GitHub에 로그인된 상태여야 받아집니다)
-   **[threads-auto-translate.xpi 다운로드](https://github.com/philaxis/threads-auto-translate/releases/latest/download/threads-auto-translate.xpi)**
+1. Firefox에서 이 링크를 누릅니다 → **[threads-auto-translate.xpi 받기](https://github.com/philaxis/threads-auto-translate/releases/latest/download/threads-auto-translate.xpi)**
 2. 받은 파일을 Firefox 창 아무 데나 끌어다 놓습니다.
-3. 뜨는 창에서 **추가**를 누르면 끝. 이후 threads.com에서 자동으로 번역됩니다.
+3. 뜨는 창에서 **추가**를 누르면 끝입니다.
 
-Mozilla 서명을 받은 파일이라 일반 Firefox에 그대로 영구 설치됩니다.
+Mozilla 서명을 받은 파일이라 일반 Firefox에 그대로 설치되고, 새 버전이 나오면 자동으로 업데이트됩니다.
+Chrome은 지원하지 않습니다.
 
-## 새 버전 만들기 (개발용)
+## 하는 일
 
-1. `manifest.json`의 `version`을 올립니다. (같은 버전은 다시 서명할 수 없음)
-2. 서명: 확장 파일(manifest.json, content.js, background.js, icons)만 든 폴더에서
-   ```bash
-   npx web-ext sign --channel=unlisted --source-dir <폴더> --artifacts-dir signed
-   ```
-3. 서명된 xpi를 `threads-auto-translate.xpi` 이름으로 GitHub 릴리스에 올립니다.
+- 화면 근처에 온 외국어 글의 번역 버튼만, 0.15초 간격으로 하나씩 누릅니다.
+- **원본 보기**로 되돌린 글은 다시 번역하지 않습니다.
+- 툴바 아이콘을 누르면 켜고 끌 수 있습니다. 꺼져 있으면 아이콘에 `OFF`가 붙습니다.
+- 버튼 글자(`번역하기`, `번역 보기`, `Translate`, `See translation`)로만 버튼을 찾습니다.
 
-임시로 시험만 할 때는 `about:debugging#/runtime/this-firefox` → **임시 부가 기능 로드** → `manifest.json`.
+## 개인정보
+
+아무 데이터도 모으거나 보내지 않습니다. 요청하는 권한은 켜짐/꺼짐 설정을 저장하는 `storage` 하나뿐이고, 스레드 사이트에서만 동작합니다.
+코드는 `content.js`(약 90줄)와 `background.js`가 전부라 직접 읽어 보셔도 됩니다.
+
+## 알아 두실 점
+
+Meta·Threads와 관련 없는 개인이 만든 비공식 확장입니다. "Threads"는 Meta Platforms, Inc.의 상표입니다.
+스레드 화면 구조가 바뀌면 고칠 때까지 동작하지 않을 수 있습니다.
+
+## 개발
+
+- 시험 설치: `about:debugging#/runtime/this-firefox` → **임시 부가 기능 로드** → `manifest.json`
+- 새 버전 배포:
+  1. `manifest.json`의 `version`을 올립니다.
+  2. 확장 파일(manifest.json, content.js, background.js, icons)만 든 폴더에서 서명합니다.
+     ```bash
+     npx web-ext sign --channel=unlisted --source-dir <폴더> --artifacts-dir signed \
+       --api-key "$WEB_EXT_API_KEY" --api-secret "$WEB_EXT_API_SECRET"
+     ```
+  3. 서명된 파일을 `threads-auto-translate.xpi` 이름으로 GitHub 릴리스(`v<버전>`)에 올립니다.
+  4. `updates.json`에 새 버전 항목을 추가합니다. 설치된 Firefox가 이 파일을 보고 자동으로 업데이트합니다.

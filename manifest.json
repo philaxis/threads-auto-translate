@@ -1,27 +1,39 @@
 {
   "manifest_version": 3,
-  "name": "Threads 자동 번역",
-  "description": "스레드(Threads) 피드의 외국어 게시물에 있는 번역 버튼을 자동으로 눌러 줍니다.",
-  "version": "1.0.0",
+  "name": "스레드 자동 번역 (비공식)",
+  "description": "스레드 외국어 글의 '번역하기' 버튼을 자동으로 눌러 줍니다. Meta와 관련 없는 비공식 확장입니다.",
+  "version": "1.0.1",
   "browser_specific_settings": {
     "gecko": {
       "id": "threads-auto-translate@philaxis",
       "strict_min_version": "128.0",
       "data_collection_permissions": {
-        "required": ["none"]
-      }
+        "required": [
+          "none"
+        ]
+      },
+      "update_url": "https://raw.githubusercontent.com/philaxis/threads-auto-translate/main/updates.json"
     }
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://*.threads.com/*", "*://*.threads.net/*"],
-      "js": ["content.js"],
+      "matches": [
+        "*://*.threads.com/*",
+        "*://*.threads.net/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "action": {
     "default_title": "스레드 자동 번역: 켜짐",

@@ -33,6 +33,12 @@ const clickObserver = new IntersectionObserver(
   { rootMargin: "800px 0px" }
 );
 
+function forget(el) {
+  seenButtons.delete(el);
+  const post = el.closest("[data-pressable-container]");
+  if (post) seenPosts.delete(post);
+}
+
 function drain() {
   if (draining) return;
   draining = true;
@@ -42,7 +48,9 @@ function drain() {
       draining = false;
       return;
     }
-    if (enabled && el.isConnected && LABELS.has(el.textContent.trim())) {
+    if (!enabled) {
+      forget(el);
+    } else if (el.isConnected && LABELS.has(el.textContent.trim())) {
       try {
         el.click();
       } catch (e) {}
