@@ -14,7 +14,7 @@
 3. 在跳出的視窗按 **新增** 即可。
 
 檔案經過 Mozilla 簽署，可直接安裝在一般 Firefox 中，有新版本時會自動更新。
-不支援 Chrome。
+Chrome、Edge、Brave 等 Chromium 瀏覽器版本正在 Chrome 線上應用程式商店審核中（連結稍後補上）。
 
 ## 功能
 

@@ -14,7 +14,7 @@ Translation is Threads' own built-in feature; this extension only clicks the but
 3. Click **Add** in the dialog that appears.
 
 The file is signed by Mozilla, so it installs in regular Firefox and updates automatically when a new version is released.
-Chrome is not supported.
+Chrome, Edge, Brave, Whale and other Chromium browsers: Chrome Web Store version is under review (link coming soon).
 
 ## What it does
 
