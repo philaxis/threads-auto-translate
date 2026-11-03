@@ -46,3 +46,7 @@ Meta·Threads와 관련 없는 개인이 만든 비공식 확장입니다. "Thre
      ```
   3. 서명된 파일을 `threads-auto-translate.xpi` 이름으로 GitHub 릴리스(`v<버전>`)에 올립니다.
   4. `updates.json`에 새 버전 항목을 추가합니다. 설치된 Firefox가 이 파일을 보고 자동으로 업데이트합니다.
+
+## 라이선스
+
+[MIT](LICENSE)

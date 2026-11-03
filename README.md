@@ -46,3 +46,7 @@ If the Threads page structure changes, the extension may stop working until it i
      ```
   3. Upload the signed file to the GitHub release (`v<version>`) with the name `threads-auto-translate.xpi`.
   4. Add the new version to `updates.json`. Installed Firefox reads this file and updates automatically.
+
+## License
+
+[MIT](LICENSE)

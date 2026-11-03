@@ -46,3 +46,7 @@ Chrome、Edge、Brave 等 Chromium 瀏覽器版本正在 Chrome 線上應用程�
      ```
   3. 把簽署後的檔案以 `threads-auto-translate.xpi` 的名稱上傳到 GitHub 發布（`v<版本>`）。
   4. 在 `updates.json` 加入新版本項目。已安裝的 Firefox 會讀取這個檔案自動更新。
+
+## 授權
+
+[MIT](LICENSE)
