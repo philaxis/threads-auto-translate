@@ -14,29 +14,22 @@
 툴바의 아이콘을 누르면 켜짐/꺼짐이 바뀝니다. 꺼져 있으면 배지에 `OFF`가 표시됩니다.
 설정은 브라우저에 저장되어 다음에 열어도 유지됩니다.
 
-## 설치
+## 설치 (Windows · Mac · Linux 공통)
 
-### 임시 설치 (개발용, 재시작하면 사라짐)
+1. Firefox에서 아래 링크를 누릅니다. (GitHub에 로그인된 상태여야 받아집니다)
+   **[threads-auto-translate.xpi 다운로드](https://github.com/philaxis/threads-auto-translate/releases/latest/download/threads-auto-translate.xpi)**
+2. 받은 파일을 Firefox 창 아무 데나 끌어다 놓습니다.
+3. 뜨는 창에서 **추가**를 누르면 끝. 이후 threads.com에서 자동으로 번역됩니다.
 
-1. Firefox 주소창에 `about:debugging#/runtime/this-firefox` 입력
-2. **임시 부가 기능 로드** 클릭
-3. 이 폴더의 `manifest.json` 선택
+Mozilla 서명을 받은 파일이라 일반 Firefox에 그대로 영구 설치됩니다.
 
-### 영구 설치
+## 새 버전 만들기 (개발용)
 
-일반 Firefox는 서명된 `.xpi`만 설치할 수 있습니다.
+1. `manifest.json`의 `version`을 올립니다. (같은 버전은 다시 서명할 수 없음)
+2. 서명: 확장 파일(manifest.json, content.js, background.js, icons)만 든 폴더에서
+   ```bash
+   npx web-ext sign --channel=unlisted --source-dir <폴더> --artifacts-dir signed
+   ```
+3. 서명된 xpi를 `threads-auto-translate.xpi` 이름으로 GitHub 릴리스에 올립니다.
 
-- AMO에 **unlisted**로 서명:
-  ```bash
-  npx web-ext sign --channel=unlisted --api-key ... --api-secret ...
-  ```
-- 또는 Developer Edition / Nightly에서 `about:config` → `xpinstall.signatures.required`를 `false`로 바꾼 뒤
-  `bash build.sh`로 만든 `dist/threads-auto-translate.xpi`를 설치합니다.
-
-## 빌드
-
-```bash
-bash build.sh
-```
-
-`dist/threads-auto-translate.xpi`가 만들어집니다.
+임시로 시험만 할 때는 `about:debugging#/runtime/this-firefox` → **임시 부가 기능 로드** → `manifest.json`.
