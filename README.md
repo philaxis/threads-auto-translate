@@ -35,6 +35,7 @@ If the Threads page structure changes, the extension may stop working until it i
 
 ## Development
 
+- Build both packages (Firefox `.xpi` and Chrome Web Store `.zip`) into `dist/`: `bash build.sh`
 - Test install: `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on** → `manifest.json`
 - Release a new version:
   1. Bump `version` in `manifest.json`.

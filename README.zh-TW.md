@@ -35,6 +35,7 @@
 
 ## 開發
 
+- 在 `dist/` 產生兩個套件（Firefox `.xpi` 與 Chrome 線上應用程式商店用 `.zip`）：`bash build.sh`
 - 測試安裝：`about:debugging#/runtime/this-firefox` → **載入臨時附加元件** → `manifest.json`
 - 發布新版本：
   1. 提高 `manifest.json` 的 `version`。

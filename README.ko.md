@@ -35,6 +35,7 @@ Meta·Threads와 관련 없는 개인이 만든 비공식 확장입니다. "Thre
 
 ## 개발
 
+- 두 패키지(Firefox `.xpi`, Chrome 웹 스토어용 `.zip`)를 `dist/`에 빌드: `bash build.sh`
 - 시험 설치: `about:debugging#/runtime/this-firefox` → **임시 부가 기능 로드** → `manifest.json`
 - 새 버전 배포:
   1. `manifest.json`의 `version`을 올립니다.

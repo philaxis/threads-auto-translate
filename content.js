@@ -1,3 +1,5 @@
+const api = globalThis.browser ?? globalThis.chrome;
+
 const LABELS = new Set(["번역하기", "번역 보기", "Translate", "See translation", "翻譯", "翻译", "翻訳"]);
 
 const seenButtons = new WeakSet();
@@ -9,7 +11,7 @@ let draining = false;
 
 function readEnabled() {
   try {
-    return browser.storage.local
+    return api.storage.local
       .get("enabled")
       .then((result) => {
         if (result && typeof result.enabled === "boolean") enabled = result.enabled;
@@ -80,7 +82,7 @@ function scheduleScan() {
 }
 
 try {
-  browser.storage.onChanged.addListener((changes, area) => {
+  api.storage.onChanged.addListener((changes, area) => {
     if (area !== "local" || !changes.enabled) return;
     enabled = changes.enabled.newValue !== false;
     if (enabled) scan();
