@@ -1,4 +1,4 @@
-const LABELS = new Set(["번역하기", "번역 보기", "Translate", "See translation"]);
+const LABELS = new Set(["번역하기", "번역 보기", "Translate", "See translation", "翻譯", "翻译", "翻訳"]);
 
 const seenButtons = new WeakSet();
 const seenPosts = new WeakSet();

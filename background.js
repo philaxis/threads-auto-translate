@@ -1,5 +1,5 @@
-const TITLE_ON = "스레드 자동 번역: 켜짐";
-const TITLE_OFF = "스레드 자동 번역: 꺼짐";
+const TITLE_ON = browser.i18n.getMessage("titleOn");
+const TITLE_OFF = browser.i18n.getMessage("titleOff");
 
 async function getEnabled() {
   try {

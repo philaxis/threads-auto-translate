@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "스레드 자동 번역 (비공식)",
-  "description": "스레드 외국어 글의 '번역하기' 버튼을 자동으로 눌러 줍니다. Meta와 관련 없는 비공식 확장입니다.",
-  "version": "1.0.1",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "1.1.0",
+  "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "threads-auto-translate@philaxis",
@@ -36,11 +37,17 @@
     ]
   },
   "action": {
-    "default_title": "스레드 자동 번역: 켜짐",
-    "default_icon": "icons/icon.svg"
+    "default_title": "__MSG_titleOn__",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
   },
   "icons": {
-    "48": "icons/icon.svg",
-    "96": "icons/icon.svg"
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
   }
 }

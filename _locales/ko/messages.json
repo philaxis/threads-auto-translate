@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Threads Auto-Translate" },
+  "extDescription": { "message": "스레드 외국어 글의 '번역하기' 버튼을 자동으로 눌러 줍니다. Meta와 관련 없는 비공식 확장입니다." },
+  "titleOn": { "message": "Threads Auto-Translate: 켜짐" },
+  "titleOff": { "message": "Threads Auto-Translate: 꺼짐" }
+}

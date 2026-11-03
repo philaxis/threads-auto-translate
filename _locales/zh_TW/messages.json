@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Threads Auto-Translate" },
+  "extDescription": { "message": "自動點擊 Threads 外語貼文的「翻譯」按鈕。非官方擴充套件，與 Meta 無關。" },
+  "titleOn": { "message": "Threads Auto-Translate：開啟" },
+  "titleOff": { "message": "Threads Auto-Translate：關閉" }
+}

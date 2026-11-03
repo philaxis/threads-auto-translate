@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Threads Auto-Translate" },
+  "extDescription": { "message": "Automatically clicks the built-in Translate button on foreign-language Threads posts. Unofficial, not affiliated with Meta." },
+  "titleOn": { "message": "Threads Auto-Translate: On" },
+  "titleOff": { "message": "Threads Auto-Translate: Off" }
+}
